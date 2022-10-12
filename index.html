@@ -2,24 +2,22 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-	<style type='text/css'>
-    .embeddedServiceHelpButton .helpButton .uiButton {
-        background-color: #D1030F;
-        font-family: "Salesforce Sans", sans-serif;
-    }
-    .embeddedServiceHelpButton .helpButton .uiButton:focus {
-        outline: 1px solid #D1030F;
-    }
-    @font-face {
-        font-family: 'Salesforce Sans';
-        src: url('https://www.sfdcstatic.com/system/shared/common/assets/fonts/SalesforceSans/SalesforceSans-Regular.woff') format('woff'),
-        url('https://www.sfdcstatic.com/system/shared/common/assets/fonts/SalesforceSans/SalesforceSans-Regular.ttf') format('truetype');
-    }
-		
-  body {
-  background-image: url('http://www.catrielmapu.com.ar/wp-content/uploads/2018/08/logo-toyota-plan-de-ahorro.jpg');
-}
+
+<style type='text/css'>
+	.embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #005290;
+		font-family: "Salesforce Sans", sans-serif;
+	}
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #005290;
+	}
+	@font-face {
+		font-family: 'Salesforce Sans';
+		src: url('https://c1.sfdcstatic.com/etc/clientlibs/sfdc-aem-master/clientlibs_base/fonts/SalesforceSans-Regular.woff') format('woff'),
+		url('https://c1.sfdcstatic.com/etc/clientlibs/sfdc-aem-master/clientlibs_base/fonts/SalesforceSans-Regular.ttf') format('truetype');
+	}
 </style>
+
 </head>
 	
 <body>
@@ -36,39 +34,23 @@
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
-		embedded_svc.settings.displayHelpButton = true; //O falso
-		embedded_svc.settings.language = ''; //Por ejemplo, introduzca 'en' o 'en-US'
-
-		//embedded_svc.settings.defaultMinimizedText = '...'; //(Toma como valor predeterminado Sesión de chat con un experto)
-		//embedded_svc.settings.disabledMinimizedText = '...'; //(Toma como valor predeterminado Agente sin conexión)
-
-		//embedded_svc.settings.loadingText = ''; //(Toma como valor predeterminado Cargando)
-		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Establece el dominio para su desarrollo de modo que los visitantes puedan navegar por subdominios durante una sesión de chat)
-
-		// Configuración para Chat
-		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
-			// Returns a valid button ID.
-		//};
-		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Establece la cumplimentación automática de los campos del formulario previo al chat
-		//embedded_svc.settings.fallbackRouting = []; //Una matriz de identificadores de botones, de usuario o userId_buttonId
-		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Toma como valor predeterminado la opción Contacto)
-
+		embedded_svc.settings.displayHelpButton = true; 
+		embedded_svc.settings.language = '';
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 
 		embedded_svc.init(
-			'https://einsteinexampledemo-dev-ed.my.salesforce.com',
-			'https://demogeneral-developer-edition.na85.force.com/TASA',
+			'https://demo-einstein-df2u-dev-ed.my.salesforce.com',
+			'https://einsteincommunityxap-developer-edition.na85.force.com/clientetoyota',
 			gslbBaseURL,
-			'00D1U000000E3eY',
-			'TASA',
+			'00D1U000000D0x6',
+			'ToyotaBot',
 			{
-				baseLiveAgentContentURL: 'https://c.la2-c1-ia2.salesforceliveagent.com/content',
-				deploymentId: '5721U000000dd71',
-				buttonId: '5731U000000dfyK',
-				baseLiveAgentURL: 'https://d.la2-c1-ia2.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1U000000bu67UAA_171c1e7560d',
+				baseLiveAgentContentURL: 'https://c.la2-c1-ph2.salesforceliveagent.com/content',
+				deploymentId: '5721U000000UeGp',
+				buttonId: '5731U000000UfIC',
+				baseLiveAgentURL: 'https://d.la2-c1-ph2.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1U000000TSgNUAW_169065153ed',
 				isOfflineSupportEnabled: false
 			}
 		);
@@ -76,7 +58,7 @@
 
 	if (!window.embedded_svc) {
 		var s = document.createElement('script');
-		s.setAttribute('src', 'https://einsteinexampledemo-dev-ed.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.setAttribute('src', 'https://demo-einstein-df2u-dev-ed.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
 			initESW(null);
 		};
@@ -84,6 +66,8 @@
 	} else {
 		initESW('https://service.force.com');
 	}
+</script>
+
 </script>
 </body>
 </html>
